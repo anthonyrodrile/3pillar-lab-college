@@ -1,3 +1,6 @@
+USE [college];
+GO
+
 CREATE OR ALTER VIEW view_subjectAndTeacher
 AS
 SELECT t.teacherId, t.teacherName,s.subjectName,s.credits

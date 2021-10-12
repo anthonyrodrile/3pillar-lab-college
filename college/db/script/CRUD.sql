@@ -1,3 +1,5 @@
+USE [college];
+GO
 /***********************TEACHER*******************/
 /*********************INSERT********************/
 CREATE OR ALTER PROCEDURE sp_insertTeacher
