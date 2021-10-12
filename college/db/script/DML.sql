@@ -191,3 +191,27 @@ GO
 INSERT [dbo].[studentSubject] ([id], [studentId], [subjectId]) VALUES (10, 10, 10)
 GO
 SET IDENTITY_INSERT [dbo].[studentSubject] OFF;
+
+
+SET IDENTITY_INSERT [dbo].[ProgramSubject] ON;
+INSERT [dbo].[ProgramSubject] ([id], [programId], [subjectId]) VALUES (1, 1, 1)
+GO
+INSERT [dbo].[ProgramSubject] ([id], [programId], [subjectId]) VALUES (2, 2, 2)
+GO
+INSERT [dbo].[ProgramSubject] ([id], [programId], [subjectId]) VALUES (3, 3, 3)
+GO
+INSERT [dbo].[ProgramSubject] ([id], [programId], [subjectId]) VALUES (4, 4, 4)
+GO
+INSERT [dbo].[ProgramSubject] ([id], [programId], [subjectId]) VALUES (5, 5, 5)
+GO
+INSERT [dbo].[ProgramSubject] ([id], [programId], [subjectId]) VALUES (6, 6, 6)
+GO
+INSERT [dbo].[ProgramSubject] ([id], [programId], [subjectId]) VALUES (7, 7, 7)
+GO
+INSERT [dbo].[ProgramSubject] ([id], [programId], [subjectId]) VALUES (8, 8, 8)
+GO
+INSERT [dbo].[ProgramSubject] ([id], [programId], [subjectId]) VALUES (9, 9, 9)
+GO
+INSERT [dbo].[ProgramSubject] ([id], [programId], [subjectId]) VALUES (10, 10, 10)
+GO
+SET IDENTITY_INSERT [dbo].[studentSubject] OFF;

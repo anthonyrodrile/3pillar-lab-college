@@ -34,11 +34,19 @@ AS
 DELETE FROM [dbo].[teacher] 
 WHERE [teacherId]=@teacherId
 GO
-/*********************VIEW********************/
-CREATE OR ALTER VIEW view_teacher
+/*********************SELECT********************/
+CREATE OR ALTER PROCEDURE sp_selectTeacherById
+@teacherId int
 AS
 SELECT [teacherId], [academicUnitId], [teacherName], [address], [phoneNumber], [emergencyNumber], [email], [birthdate]
-FROM [dbo].[Teacher]
+FROM [dbo].[teacher] 
+WHERE [teacherId]=@teacherId
+GO
+
+CREATE OR ALTER PROCEDURE sp_selectTeacher
+AS
+SELECT [teacherId], [academicUnitId], [teacherName], [address], [phoneNumber], [emergencyNumber], [email], [birthdate]
+FROM [dbo].[teacher] 
 GO
 /***********************SUBJECT*******************/
 /*********************INSERT********************/
@@ -73,8 +81,16 @@ AS
 DELETE FROM [dbo].[Subject]
 WHERE [subjectId]=@subjectId
 GO
-/*********************VIEW********************/
-CREATE OR ALTER VIEW view_subject
+/*********************SELECT********************/
+CREATE OR ALTER PROCEDURE sp_selectSubjectById
+@subjectId int
+AS
+SELECT [subjectId], [classroomId], [teacherId], [subjectName], [hoursWeek], [credits]
+FROM [dbo].[Subject]
+WHERE [subjectId]=@subjectId
+GO
+
+CREATE OR ALTER PROCEDURE sp_selectSubject
 AS
 SELECT [subjectId], [classroomId], [teacherId], [subjectName], [hoursWeek], [credits]
 FROM [dbo].[Subject]
@@ -114,8 +130,16 @@ DELETE FROM [dbo].[Student]
 WHERE [studentId]=@studentId
 GO
 
-/*********************VIEW********************/
-CREATE OR ALTER VIEW view_student
+/*********************SELECT********************/
+CREATE OR ALTER PROCEDURE sp_selectStudentById
+@studentId int
+AS
+SELECT [studentId], [studentName], [address], [phoneNumber], [emergencyNumber], [email], [birthdate]
+FROM [dbo].[Student]
+WHERE [studentId]=@studentId
+GO
+
+CREATE OR ALTER PROCEDURE sp_selectStudent
 AS
 SELECT [studentId], [studentName], [address], [phoneNumber], [emergencyNumber], [email], [birthdate]
 FROM [dbo].[Student]
@@ -146,8 +170,16 @@ AS
 DELETE FROM [dbo].[Program]
 WHERE [programId]=@programId
 GO
-/*********************VIEW********************/ 
-CREATE OR ALTER VIEW view_program
+/*********************SELECT********************/ 
+CREATE OR ALTER PROCEDURE sp_selectProgramById
+@programId int
+AS
+SELECT [programId], [academicUnitId], [programName]
+FROM [dbo].[Program]
+WHERE [programId]=@programId
+GO
+
+CREATE OR ALTER PROCEDURE sp_selectProgram
 AS
 SELECT [programId], [academicUnitId], [programName]
 FROM [dbo].[Program]
@@ -176,8 +208,16 @@ AS
 DELETE FROM [dbo].[Classroom]
 WHERE [classroomId]=@classroomId
 GO
-/*********************VIEW********************/
-CREATE OR ALTER VIEW view_classroom
+/*********************SELECT********************/
+CREATE OR ALTER PROCEDURE sp_selectClassroomById
+@classroomId int
+AS
+SELECT [classroomId], [classroomName]
+FROM [dbo].[Classroom]
+WHERE [classroomId]=@classroomId
+GO
+
+CREATE OR ALTER PROCEDURE sp_selectClassroom
 AS
 SELECT [classroomId], [classroomName]
 FROM [dbo].[Classroom]
@@ -206,8 +246,16 @@ AS
 DELETE FROM [dbo].[AcademicUnit]
 WHERE [academicUnitId]=@academicUnitId
 GO
-/*********************VIEW********************/
-CREATE OR ALTER VIEW view_academicUnit
+/*********************SELECT********************/
+CREATE OR ALTER PROCEDURE sp_selectAcademicUnitById
+@academicUnitId int
+AS
+SELECT [academicUnitId], [academicUnitName]
+FROM [dbo].[AcademicUnit]
+WHERE [academicUnitId]=@academicUnitId
+GO
+
+CREATE OR ALTER PROCEDURE sp_selectAcademicUnit
 AS
 SELECT [academicUnitId], [academicUnitName]
 FROM [dbo].[AcademicUnit]
@@ -238,8 +286,16 @@ AS
 DELETE FROM [dbo].[StudentProgram]
 WHERE [id]=@id
 GO
-/*********************VIEW********************/
-CREATE OR ALTER VIEW view_studentProgram
+/*********************SELECT********************/
+CREATE OR ALTER PROCEDURE sp_selectStudentProgramById
+@id int
+AS
+SELECT [id], [studentId], [programId]
+FROM [dbo].[StudentProgram]
+WHERE [id]=@id
+GO
+
+CREATE OR ALTER PROCEDURE sp_selectStudentProgram
 AS
 SELECT [id], [studentId], [programId]
 FROM [dbo].[StudentProgram]
@@ -270,8 +326,16 @@ AS
 DELETE FROM [dbo].[StudentSubject]
 WHERE [id]=@id
 GO
-/*********************VIEW********************/
-CREATE OR ALTER VIEW view_studentSubject
+/*********************SELECT********************/
+CREATE OR ALTER PROCEDURE sp_selectStudentSubjectById
+@id int
+AS
+SELECT [id], [studentId], [subjectId]
+FROM [dbo].[StudentSubject]
+WHERE [id]=@id
+GO
+
+CREATE OR ALTER PROCEDURE sp_selectStudentSubject
 AS
 SELECT [id], [studentId], [subjectId]
 FROM [dbo].[StudentSubject]

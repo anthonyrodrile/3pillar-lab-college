@@ -84,3 +84,13 @@ CREATE TABLE StudentSubject
 	FOREIGN KEY(studentId) REFERENCES Student(studentId),
 	FOREIGN KEY(subjectId) REFERENCES [Subject](subjectId)
 )
+
+CREATE TABLE ProgramSubject
+(
+	id INT IDENTITY(1,1),
+	programId INT,
+	subjectId INT,
+	PRIMARY KEY(id),
+	FOREIGN KEY(subjectId) REFERENCES [Subject](subjectId),
+	FOREIGN KEY(programId) REFERENCES Program(programId)
+)
